@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.7rem;
+    font-family: 'Merriweather Sans', sans-serif;
+    background: #000428;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: #ececec;
+    padding: 4rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 5rem;
+    font-size: 4rem;
+}
+h3 {
+    text-align: center;
+    margin-bottom: 5rem;
+    font-size: 15px;
+}
+
+.all-products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product {
+    overflow: hidden;
+    background: #ffffffa1;
+    color: #21201e;
+    text-align: center;
+    width: 210px;
+    height: 360px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.2rem;
+    margin: 1rem;
+}
+
+.product .product-title, .product .product-price {
+    font-size: 18px;
+}
+
+.product:hover img {
+    transform: scale(1.1);
+}
+
+.product:hover {
+    box-shadow: 5px 15px 25px #eeeeee;
+}
+
+.product img {
+    height: 200px;
+    margin: 1rem;
+    transition: all 0.3s;
+}
+
+.product a:link, .product a:visited {
+    color: #ececec;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #2c3e50;
+    padding: 1.2rem 3rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    font-size: 15px;
+    transition: all 0.2s;
+}
+
+.product a:hover {
+    transform: scale(1.1);
+}
+.a{
+    color: #ececec;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #2c3e50;
+    padding: 1.2rem 3rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+#boton-esquina {
+    position: fixed;
+    top: 75px; /* Ajusta la distancia desde la parte superior */
+    right: 70px; /* Ajusta la distancia desde la derecha */
+    background-color:  #2c3e50;
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilo del botón al pasar el cursor por encima */
+#boton-esquina:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repasar tablas</title>
+    <link rel="stylesheet" href=".css">
+<style>table, th, td {
+    border: 1px solid rgb(255, 255, 255);
+    border-collapse: collapse;
+    padding:15px;
+    height:24px;
+    margin-left:auto;
+	margin-right:60px;
+	text-align:right;
+    color: #FFFBEB;
+    margin-top: 20px;
+    
+    
+}
+
+body{
+  background: #159957;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+  
+  .pop{
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    border-radius:8px; box-sizing:0 0 40px -10px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 650px;
+
+    
+  
+  }
+
+  h1, label {
+    margin: 10px 0;
+    color: #DFF6FF;
+    font-family: 'Copperplate Gothic';
+    position: absolute;
+    top: 40%;
+    left:35%;
+    transform: translate(-50%, -50%);
+    text-align: left; 
+    font-size: 15px;
+   
+  }
+  
+  input {
+    width: 55%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: none;
+    outline: none;
+    resize: none;
+    border: 0;
+    transition: all .3s;
+    border-bottom: 2px solid #D8D8D8;
+    color: #DFF6FF;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  button {
+    float: right;
+    padding: 10px 111px;
+    margin: 8px 0 0;
+    background: #FFFBEB;
+    color: black;
+    cursor: pointer;
+    transition: all .3s;
+    border: none;
+    font-family: 'Copperplate Gothic';
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    text-align: left; 
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .m {
+    float: right;
+    padding: 10px 35px;
+    margin: 8px 0 0;
+    background: #FFFBEB;
+    color: black;
+    cursor: pointer;
+    transition: all .3s;
+    border: none;
+    font-family: 'Copperplate Gothic';
+    position: absolute;
+    top: 90%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    text-align: left; 
+    text-align: center;
+    font-size: 15px;
+  }</style>
+</head>
+<body>
+    
+    <div class="pop">
+    <label for="numero">Ingresa un número para repasar la tabla deseada</label>
+	<input type="number" id="numero">
+	<button onclick="mostrarTabla()">Mostrar tabla</button>
+	<table id="tabla" ></table>
+    <button class="m"><a <button><a href="inicio.html">Regresar al menu</a></button>
+
+</div>
+
+	<script>
+        function mostrarTabla() {
+    var numero = document.getElementById("numero").value;
+    var tabla = document.getElementById("tabla");
+    tabla.innerHTML = "";
+
+
+    var filaTablaDel = tabla.insertRow();
+		var celdaTablaDel = filaTablaDel.insertCell();
+		celdaTablaDel.colSpan = 3;
+		celdaTablaDel.innerHTML = "Tabla del " + numero;
+
+
+    for (var i = 1; i <= 10; i++) {
+        var fila = tabla.insertRow();
+
+        var celdaNumero = fila.insertCell();
+        var celdaSigno = fila.insertCell();
+        var celdaResultado = fila.insertCell();
+    
+        var resultado = numero * i;
+     
+        celdaNumero.innerHTML = i + " x " + numero;
+        celdaSigno.innerHTML = "=";
+        celdaResultado.innerHTML = resultado;
+    }
+}
+    </script>
+</body>
+</html>

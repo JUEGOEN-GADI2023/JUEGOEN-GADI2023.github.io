@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla del 1</title>
+    <style>
+       
+body{
+    background-image: url('poco.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+  
+  }
+  input[type="number"] {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 0.25rem;
+      border: 1px solid #ccc;
+      margin-right: 0.5rem;
+  
+  }
+  
+  input{
+    border-radius: 15px;
+    height: 35px;
+    width: 250px;
+    text-align: center;
+    border: px solid #39c;
+   
+    
+  }
+  button {
+      padding: 1rem 2rem;
+      font-size: 2rem;
+      border-radius: 0.25rem;
+      border: none;
+      background-color: #8d9230;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 1rem;
+      border-radius: 15px;
+      font-family: 'Nunito';
+  }
+  button:hover {
+      background-color: #dd753d;
+  }
+  
+  
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Nunito';
+      
+    }
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      animation: animate 10s linear infinite;
+     
+    }
+    @keyframes animate{
+      0%{
+        filter: hue-rotate(0deg)
+      }
+      100%{
+        filter: hue-rotate(360deg)
+      }
+    
+    
+    
+    }
+    
+    
+    
+    label{
+      color: #7eb3cc;
+     } 
+    
+     
+    .box{
+      position: relative;
+      padding: 50px;
+      width: 444px;
+      height: 650px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      box-shadow: 0 5px 35px rgba(0, 0, 0, 0.2)
+    }
+    .box::after{
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border-radius: 5px;
+      pointer-events: none;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%,
+      rgba(255,255,255,0.1) 15%, transparent 50%, transparent 85%, rgba(255,255,255,0.3) 100%)
+    }
+    .box .seccion{
+      position: relative;
+      width: 100%;
+    }
+    .box .form h1{
+      color: #070707;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+      font-size: 40px;
+      font-family: "Spongeboy Me Bob";
+    }
+    .box .form .inputBx{
+      position: relative;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .box .form .inputBx input{
+      width: 100%;
+      outline: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: transparent;
+      padding: 8px 10px;
+      padding-left: 15px;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 300;
+      box-shadow: inset 0 0 25px rgba(0,0,0,0.2);
+    }
+    .box .form .inputBx input::placeholder{
+      color: #fff;
+    }
+    .box .form .inputBx input[type='submit']{
+      background: #fff;
+      color: #111;
+      max-width: 100px;
+      padding: 8px 10px;
+      box-shadow: none;
+      font-weight: 500;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+    .remember{
+      position: relative;
+      display: inline-block;
+      color: #fff;
+      font-weight: 300;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .box .form p{
+      color: #0a0a0a;
+      font-weight: 300;
+      font-size: 25px;
+      margin-top: 5px;
+      font-family: "Spongeboy Me Bob";
+    }
+    .box .form a{
+      color: #fff;
+    }
+
+    
+
+    .opciones {
+        display: flex;
+        justify-content: center;
+    }
+    .opcion {
+        width: 80px;
+        height: 80px;
+        border: 1px solid #000;
+        font-size: 50px;
+        margin: 0 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: #000;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .opcion:hover {
+        background-color: #262626;
+    }
+    #cronometro {
+        font-size: 36px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #bomba {
+        width: 100px;
+        height: 100px;
+        display: none;
+    }
+    #errores {
+        font-size: 20px;
+        color: red;
+        margin-top: 20px;
+        display: none;
+    }
+    #respuestas-correctas {
+        font-size: 20px;
+        color: green;
+        margin-top: 10px;
+        display: none;
+    }
+    #reiniciar-btn{
+        font-size: 24px;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        display: none;
+    }
+    #finalizado-msg {
+        font-size: 24px;
+        margin-top: 20px;
+        display: none;
+    }
+    .tabla-multiplicar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 20px;
+        font-size: 30px;
+    }
+    .tabla-multiplicar div {
+        width: 48%;
+        margin-bottom: 10px;
+    }
+    .respuesta-correcta {
+        background-color: green;
+        color: white;
+       border-radius: 5px;
+    }
+    
+
+    .container-operacion{
+        font-size: 30px;
+
+    }
+p{
+    font-size: 45px;
+}
+.re{
+  top: 5px;
+left: 5px;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+} 
+    </style>
+   
+</head>
+<body>
+    
+    <section  class="form-register">
+   
+        <div class="box">
+          <div class="form">
+            <center>
+             
+              <h1>Cuanto es:</h1>
+              <div class="container">
+                  <div class="izquierdo">
+                      <div class="container-operacion">
+                          <span id="multiplicacion">1 x 1 =</span>
+                          <span class="resultado" id="resultado"> ?</span>
+                      </div>
+                      <span class="msj" id="msj"></span>
+                      <h2>Tabla de multiplicar:</h2>
+                      <div class="tabla-multiplicar" id="tabla-multiplicar">
+                          <!-- Aquí se generará la tabla de multiplicar -->
+                      </div>
+                  </div>
+                  <div class="derecha">
+                      <div class="opciones">
+                          <span id="op1" class="opcion" onclick="controlarRespuesta(this)">1</span>
+                          <span id="op2" class="opcion" onclick="controlarRespuesta(this)">2</span>
+                          <span id="op3" class="opcion" onclick="controlarRespuesta(this)">0</span>
+                      </div>
+                  </div>
+                  <div id="cronometro">
+                      Tiempo restante: <span id="tiempo">30</span>segundos <br>
+                      <img src="bo.png" alt="Bomba" id="bomba">
+                  </div>
+                  <div id="errores"></div>
+                  <div id="respuestas-correctas"></div>
+                  <div id="finalizado-msg"></div>
+                  <button type="button"id="reiniciar-btn" onclick="reiniciar()">Reiniciar</button> <br>
+                </div>
+                <br>    <div class="re">
+                <a href="fondo1.html">
+                    <img class="re" src="re.png" alt=""> <br>
+                 </a>
+                 Regresar
+                 <a  href="inicio.html">
+                    <img class="re" src="ini.png" alt=""> <br>
+                </a>
+                 Inicio
+                </div>
+                
+              </div>
+             
+              </center>
+      
+          </div>
+       
+      
+      </section>
+  
+       
+    
+    <script>
+        var respuesta;
+var numPreguntas = 10; 
+var preguntas = 0;
+var respuestasCorrectas = 0;
+var respuestasErroneas = 0;
+
+txt_multiplicacion = document.getElementById("multiplicacion");
+op1 = document.getElementById("op1");
+op2 = document.getElementById("op2");
+op3 = document.getElementById("op3");
+txt_msj = document.getElementById("msj");
+cronometro = document.getElementById("cronometro");
+tiempoSpan = document.getElementById("tiempo");
+bomba = document.getElementById("bomba");
+erroresDiv = document.getElementById("errores");
+respuestasCorrectasDiv = document.getElementById("respuestas-correctas");
+reiniciarBtn = document.getElementById("reiniciar-btn");
+finalizadoMsg = document.getElementById("finalizado-msg");
+tablaMultiplicar = document.getElementById("tabla-multiplicar");
+
+var interval;
+var tiempo = 35; 
+
+function reiniciar() {
+    window.location.reload();
+}
+
+function generarTablaMultiplicar() {
+    var tabla = "";
+    for (var i = 1; i <= 10; i++) {
+        var resultado = i * 1;
+        var clase = "";
+        if (i === respuesta) {
+            clase = "respuesta-correcta";
+        }
+        tabla += `<div class="${clase}">${i} x 1 = ? </div>`;
+    }
+    tablaMultiplicar.innerHTML = tabla;
+}
+
+function comenzar() {
+    if (preguntas >= numPreguntas) {
+        mostrarResultados();
+        finalizadoMsg.innerHTML = "¡Juego terminado!";
+        finalizadoMsg.style.display = 'block';
+        return;
+    }
+
+    clearInterval(interval);
+    cronometro.style.display = 'flex';
+    txt_msj.innerHTML = "";
+    actualizarCronometro();
+
+
+    var num1 = 1;
+    var num2 = Math.round(Math.random() * 9);
+    respuesta = num1 * num2;
+
+    
+    multiplicacion.innerHTML = num1 + " x " + num2 + " = ";
+
+
+    var indiceOpCorrecta = Math.round(Math.random() * 2);
+
+
+    if (indiceOpCorrecta == 0) {
+        op1.innerHTML = respuesta;
+        op2.innerHTML = respuesta + 1;
+        op3.innerHTML = respuesta - 1;
+    }
+    if (indiceOpCorrecta == 1) {
+        op1.innerHTML = respuesta - 1;
+        op2.innerHTML = respuesta;
+        op3.innerHTML = respuesta - 2;
+    }
+    if (indiceOpCorrecta == 2) {
+        op1.innerHTML = respuesta + 2;
+        op2.innerHTML = respuesta + 3;
+        op3.innerHTML = respuesta;
+    }
+
+    generarTablaMultiplicar();
+
+    interval = setInterval(function () {
+        tiempo--;
+        if (tiempo <= 0) {
+            clearInterval(interval);
+            cronometro.innerHTML = "¡Tiempo agotado! <br><button onclick='reiniciar()'>Reiniciar</button>";
+            bomba.style.display = 'block';
+            explotarBomba();
+            respuestasErroneas++;
+            mostrarResultados();
+        } else {
+            actualizarCronometro();
+        }
+    }, 1000);
+}
+
+function mostrarResultados() {
+    cronometro.style.display = 'none';
+    erroresDiv.innerHTML = "Errores: " + respuestasErroneas;
+    respuestasCorrectasDiv.innerHTML = "Respuestas Correctas: " + respuestasCorrectas;
+    reiniciarBtn.style.display = 'block';
+}
+
+function actualizarCronometro() {
+    tiempoSpan.innerHTML = tiempo;
+}
+
+function controlarRespuesta(opcionElegida) {
+    clearInterval(interval);
+    if (respuesta == opcionElegida.innerHTML) {
+        txt_msj.innerHTML = "<p>EXCELENTE!!</p>";
+        txt_msj.style.color = "green";
+        respuestasCorrectas++;
+        setTimeout(comenzar, 2000);
+    } else {
+        txt_msj.innerHTML = "INTENTA DE NUEVO!!";
+        txt_msj.style.color = "red";
+        respuestasErroneas++;
+        setTimeout(comenzar, 2000);
+    }
+    preguntas++;
+}
+
+comenzar();
+     </script> 
+</body>
+</html>
